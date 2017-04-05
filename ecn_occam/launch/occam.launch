@@ -11,23 +11,23 @@
     
     <node name="img_manager" pkg="nodelet" type="nodelet manager"/>
 
-    <include file="$(find irt_occam)/launch/rectify.launch">
+    <include file="$(find ecn_occam)/launch/rectify.launch">
         <arg name="nb" value="0"/>
     </include>
 
-    <include file="$(find irt_occam)/launch/rectify.launch">
+    <include file="$(find ecn_occam)/launch/rectify.launch">
         <arg name="nb" value="1"/>
     </include>
 
-    <include file="$(find irt_occam)/launch/rectify.launch">
+    <include file="$(find ecn_occam)/launch/rectify.launch">
         <arg name="nb" value="2"/>
     </include>
 
-    <include file="$(find irt_occam)/launch/rectify.launch">
+    <include file="$(find ecn_occam)/launch/rectify.launch">
         <arg name="nb" value="3"/>
     </include>
 
-    <include file="$(find irt_occam)/launch/rectify.launch">
+    <include file="$(find ecn_occam)/launch/rectify.launch">
         <arg name="nb" value="4"/>
     </include>    
 
