@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<launch>
+    <arg name="nb" default="0"/>
+    
+    <group ns="/camera$(arg nb)">
+    <node name="camera_info_publisher" pkg="ecn_occam" type="camera_info_publisher" output="screen">
+        <param name="file" value="$(find ecn_occam)/calib/camera$(arg nb).yaml"/>
+    </node>
+    
+    <!--node name="img_proc" pkg="image_proc" type="image_proc">    
+        <remap from ="~image_raw" to="/occam_driver/image$(arg nb)"/>
+    </node-->
+    
+     <node pkg="nodelet" type="nodelet" name="rectify_color"
+        args="load image_proc/rectify /img_manager "
+        respawn="true">
+    <remap from="image_mono" to="image" />
+  </node>  
+    </group>
+    
+    
+</launch>

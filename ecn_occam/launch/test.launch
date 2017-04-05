@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<launch>
+
+     <node pkg="nodelet" type="nodelet" name="rectify_color"
+        args="load image_proc/rectify /nodelet_manager "
+        respawn="true">
+    <remap from="image_mono" to="image" />
+  </node>  
+
+    
+</launch>

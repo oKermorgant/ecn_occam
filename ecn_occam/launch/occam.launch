@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<launch>
+    
+    <node name="occam_driver" pkg="ros_indigosdk" type="ros_indigosdk_node" output="screen">
+        <remap from="~image0" to="/camera0/image"/>        
+        <remap from="~image1" to="/camera1/image"/>        
+        <remap from="~image2" to="/camera2/image"/>        
+        <remap from="~image3" to="/camera3/image"/>        
+        <remap from="~image4" to="/camera4/image"/>        
+    </node>
+    
+    <node name="img_manager" pkg="nodelet" type="nodelet manager"/>
+
+    <include file="$(find irt_occam)/launch/rectify.launch">
+        <arg name="nb" value="0"/>
+    </include>
+
+    <include file="$(find irt_occam)/launch/rectify.launch">
+        <arg name="nb" value="1"/>
+    </include>
+
+    <include file="$(find irt_occam)/launch/rectify.launch">
+        <arg name="nb" value="2"/>
+    </include>
+
+    <include file="$(find irt_occam)/launch/rectify.launch">
+        <arg name="nb" value="3"/>
+    </include>
+
+    <include file="$(find irt_occam)/launch/rectify.launch">
+        <arg name="nb" value="4"/>
+    </include>    
+
+    
+</launch>
